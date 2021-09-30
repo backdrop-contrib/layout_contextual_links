@@ -1,0 +1,11 @@
+name = Layout Contextual Links
+description = Provides contextual links for the layout on each page.
+package = Layout
+type = module
+backdrop = 1.x
+
+dependencies[] = contextual
+
+configure = admin/config/development/layout_contextual_links
+
+stylesheets[all][] = css/layout_contextual_links.css
