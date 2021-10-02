@@ -6,7 +6,8 @@ This module adds a contextual links drop-down for the layout on all pages.
 Installation
 ------------
 
-Install and enable this module using [the official Backdrop CMS instructions](https://backdropcms.org/guide/modules).
+Install this module using [the official Backdrop CMS instructions](
+  https://docs.backdropcms.org/documentation/extend-with-modules).
 
 Usage
 -------------
