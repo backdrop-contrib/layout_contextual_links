@@ -17,16 +17,18 @@ function layout_contextual_links_settings_form($form, &$form_state) {
     '#prefix' => '<p>',
     '#suffix' => '</p>',
   );
+  $theme_default = config_get('system.core', 'theme_default');
   $form['default_theme_shift'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Shift contextual links downward for default theme'),
-    '#description' => t('Check this box to shift contextual links downward for all pages in the default theme that display the admin bar.'),
+    '#title' => t('Shift for default theme'),
+    '#description' => t('Shift contextual links downward for all pages that display the admin bar in the default theme (%theme_default).', array('%theme_default' => $theme_default)),
     '#default_value' => $config->get('default_theme_shift'),
   );
+  $admin_theme = config_get('system.core', 'admin_theme');
   $form['admin_theme_shift'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Shift contextual links downward for admin theme'),
-    '#description' => t('Check this box to shift contextual links downward for all pages in the admin theme that display the admin bar.'),
+    '#title' => t('Shift for admin theme'),
+    '#description' => t('Shift contextual links downward for all pages that display the admin bar in the admin theme (%admin_theme).', array('%admin_theme' => $admin_theme)),
     '#default_value' => $config->get('admin_theme_shift'),
   );
 
