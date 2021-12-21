@@ -86,7 +86,7 @@ function layout_contextual_links_preprocess_layout(&$variables) {
  */
 function layout_contextual_links_config_info() {
   $prefixes['layout_contextual_links.settings'] = array(
-    'label' => t('Layout Contextual Linsk settings'),
+    'label' => t('Layout Contextual Links settings'),
     'group' => t('Configuration'),
   );
   return $prefixes;

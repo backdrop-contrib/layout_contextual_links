@@ -1,6 +1,6 @@
 name = Layout Contextual Links
 description = Provides contextual links for the layout on each page.
-package = Layout
+package = User Interface
 type = module
 backdrop = 1.x
 
