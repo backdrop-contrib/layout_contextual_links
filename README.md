@@ -20,23 +20,7 @@ Some themes (e.g., Basis) will cover the contextual links with the admin bar in
 their default position. There is a configuration option at
 `admin/config/development/layout_contextual_links` to shift the contextual links
 downward far enough to clear the admin bar for the default and/or admin themes,
-depending on what you're using. For the core themes, use these settings:
-
-* Bartik — shift down.
-* Basis — shift down.
-* Seven — no shift.
-
-For other themes, you can try both settings to see which one gives the best results.
-
-See [this Github issue](https://github.com/backdrop/backdrop-issues/issues/2626)
-for some discussion and details.
-
-Roadmap
-------
-
-The functionality in this module will at some point be moved into Backdrop core.
-When that happens, this module will be disabled and uninstalled automatically
-when appropriate.
+depending on what you're using. The settings page will make recommendations for known themes; for other themes, you can try both settings to see which one gives the best results.
 
 Issues
 ------
