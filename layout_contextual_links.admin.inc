@@ -13,9 +13,8 @@ function layout_contextual_links_settings_form($form, &$form_state) {
   $form['#config'] = 'layout_contextual_links.settings';
 
   $form[] = array(
+    '#type' => 'help',
     '#markup' => t('Some themes will cover up the default contextual links with the admin bar. Check either of the below to shift the layout contextual links downward for the specified theme.'),
-    '#prefix' => '<p>',
-    '#suffix' => '</p>',
   );
   $themes = list_themes();
   $theme_default = $themes[config_get('system.core', 'theme_default')];
