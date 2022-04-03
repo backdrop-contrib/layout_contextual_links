@@ -4,3 +4,12 @@
  * Install, update and uninstall functions for the Layout Contextual Links module.
  */
 
+/**
+ * Initialize the conditional display of layout and theme contextual links.
+ */
+function layout_contextual_links_update_1001() {
+  $config = config('layout_contextual_links.settings');
+  $config->set('layout_links', TRUE);
+  $config->set('theme_links', TRUE);
+  $config->save();
+}

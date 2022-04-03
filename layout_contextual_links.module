@@ -11,7 +11,7 @@
 function layout_contextual_links_menu() {
 $items['admin/config/development/layout_contextual_links'] = array(
     'title' => 'Layout contextual links',
-    'description' => 'Configuration page for layout contextual links',
+    'description' => 'Configuration page for layout/theme contextual links.',
     'page callback' => 'backdrop_get_form',
     'page arguments' => array('layout_contextual_links_settings_form'),
     'file' => 'layout_contextual_links.admin.inc',
@@ -27,7 +27,7 @@ function layout_contextual_links_permission() {
   return array(
     'administer layout contextual links' => array(
       'title' => t('Administer layout contextual links'),
-      'description' => t('Specify whether the layout contextual links should be shifted down on the default or admin theme.'),
+      'description' => t('Administer settings for layout contextual links.'),
     ),
   );
 }
@@ -59,14 +59,23 @@ function layout_contextual_links_init() {
 function layout_contextual_links_preprocess_layout(&$variables) {
   // Wrap the output in contextual links via the renderer if applicable.
   if (user_access('access contextual links')) {
-    $layout = $variables['layout'];
     $links = array();
     if (user_access('administer layouts')) {
-      $name = $layout->name;
       $query = array('destination' => current_path());
-      $links[] = '<div class="info">' . t('Layout: %title', array('%title' => $layout->title)) . '</div>';
-      $links[] = l(t('Manage blocks'), 'admin/structure/layouts/manage/' . $name, array('query' => $query));
-      $links[] = l(t('Configure layout'), 'admin/structure/layouts/manage/' . $name . '/configure', array('query' => $query));
+      if (config_get('layout_contextual_links.settings', 'layout_links')) {
+        $layout = $variables['layout'];
+        $name = $layout->name;
+        $links[] = '<div class="info">' . t('Layout: %title', array('%title' => $layout->title)) . '</div>';
+        $links[] = l(t('Manage blocks'), 'admin/structure/layouts/manage/' . $name, array('query' => $query));
+        $links[] = l(t('Configure layout'), 'admin/structure/layouts/manage/' . $name . '/configure', array('query' => $query));
+      }
+      if (config_get('layout_contextual_links.settings', 'theme_links')) {
+        global $theme_key;
+        $themes = list_themes();
+        $theme = $themes[$theme_key];
+        $links[] = '<div class="info">' . t('Theme: %title', array('%title' => $theme->info['name'])) . '</div>';
+        $links[] = l(t('Theme settings'), 'admin/appearance/settings/' . $theme_key, array('query' => $query));
+      }
     }
     if (!empty($links)) {
       $variables['renderer']->prefix = '
