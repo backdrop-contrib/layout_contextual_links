@@ -1,5 +1,7 @@
 {
     "_config_name": "layout_contextual_links.settings",
     "default_theme_shift": 0,
-    "admin_theme_shift": 0
+    "admin_theme_shift": 0,
+    "layout_links": 1,
+    "theme_links": 1
 }

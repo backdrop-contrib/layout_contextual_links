@@ -1,7 +1,7 @@
 Layout Contextual Links
 ===============
 
-This module adds a contextual links drop-down for the layout on all pages.
+This module adds a contextual links drop-down for the layout (and, optionally, theme information) on all pages.
 
 Installation
 ------------
@@ -14,13 +14,15 @@ Usage
 
 Once enabled, this will add contextual links for the layout on each page, which
 will be seen by users who have the "use contextual links" and "administer
-layouts" permissions.
+layouts" permissions. There is also an option to display theme information and links as well.
 
 Some themes (e.g., Basis) will cover the contextual links with the admin bar in
 their default position. There is a configuration option at
 `admin/config/development/layout_contextual_links` to shift the contextual links
 downward far enough to clear the admin bar for the default and/or admin themes,
 depending on what you're using. The settings page will make recommendations for known themes; for other themes, you can try both settings to see which one gives the best results.
+
+Beginning with Backdrop 1.22, the Administration bar includes a "Page links" menu on the right that provides similar functionality, but as an admin bar menu, rather than a contextual links menu. You can enable/disable that feature at `admin/config/administration/admin-bar`.
 
 Issues
 ------

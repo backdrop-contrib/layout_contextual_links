@@ -2,6 +2,8 @@
 
 .contextual-links li .info {
   color: #333 !important;
+  cursor: default;
+  font-weight: bold;
   display: block;
   margin: 0.25em 0;
   padding: 0.25em 1em 0.25em 0.5em; /* LTR */
